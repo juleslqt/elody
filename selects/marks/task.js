@@ -85,7 +85,7 @@ module.exports = {
                                     tasks.push( 
                                     new MessageEmbed()
                                       .setColor(color)
-                                      .setDescription(response[0][i]['description'])
+                                      .setDescription(response[0][i]['task'])
                                       .addFields(
                                           {name: 'Deadline : ', value: response[0][i]['dl'], inline: true},
                                           {name: 'Responsable : ', value: response[0][i]['responsable'], inline: true}
@@ -107,7 +107,7 @@ module.exports = {
                       }).catch(err => console.log(err));  
             
                 })
-                
+
               }).catch(err => console.log(err));
             })
           })

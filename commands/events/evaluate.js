@@ -141,6 +141,8 @@ module.exports = {
         else {
             query = `SELECT *, date_format(deadline, '%d/%m à %H:%i') as dl FROM plan_action WHERE pole='${role_name}' AND avancement=1 AND mark='none' ORDER BY id DESC LIMIT 1;`;
 
+            console.log(query);
+
             mysql.createConnection({
                 host: process.env.DATABASE_HOST,
                 user: process.env.DATABASE_USER,

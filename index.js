@@ -17,4 +17,4 @@ process.on('unhandledRejection', (reason, promise) => { Logger.warn(`UNHANDLED_R
 process.on('warning', (...args) => { Logger.warn(...args) });
 
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(process.env.TOKEN);

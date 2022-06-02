@@ -7,6 +7,23 @@ module.exports = {
     async runInteraction(client,interaction) {
         const value = (await interaction.values[0]).split(',');
 
+        const eventRoles = ['Événement dégustation', 'Levée de fonds'];
+        const otherRoles = ['Présidence', 'Communication', 'Secrétariat', 'Trésorerie', 'Production Vidéo', 'Informatique', 'Événement dégustation', 'Levée de fonds'];
+        let role_name = '';
+        let i = 0;
+
+        while (i < interaction.member.roles.cache.size) {
+            let role = await interaction.member.roles.cache.at(i);
+                if (otherRoles.includes(await role.name)) {
+                    role_name = await role.name;  
+                    i+= interaction.member.roles.cache.size;
+                }
+            
+            i+=1;
+        }
+
+        let query;
+
         mysql.createConnection({
             host: process.env.DATABASE_HOST,
             user: process.env.DATABASE_USER,

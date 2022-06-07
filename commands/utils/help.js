@@ -30,6 +30,20 @@ module.exports = {
     async runInteraction(client,interaction) {
 
         const cmdName = interaction.options.getString('commande');
+
+        const otherRoles = ['Présidence', 'Communication', 'Secrétariat', 'Trésorerie', 'Production Vidéo', 'Informatique', 'Événement dégustation', 'Levée de fonds', 'Responsables'];
+        let member_roles = [];
+        let i = 0;
+
+        while (i < interaction.member.roles.cache.size) {
+            let role = await interaction.member.roles.cache.at(i);
+                if (otherRoles.includes(await role.name)) {
+                    member_roles[await role.name] = await role.id;
+                } 
+            i+=1;
+        }
+
+        console.log(member_roles);
         
         if (!cmdName) {
             const noArgsEmbed = new MessageEmbed()

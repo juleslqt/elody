@@ -63,6 +63,8 @@ module.exports = {
                 }
 
                 if (category_verificator) {
+                    console.log('Catégorie : ', category);
+                    console.log('Commandes : ', client.commands.filter(cmd => cmd.category == category.toLowerCase()));
                 noArgsEmbed.addField(
                     `► ${category.toUpperCase()}`,
                     `${client.commands.filter(cmd => cmd.category == category.toLowerCase()).map(cmd => cmd.name).join(', ')}`

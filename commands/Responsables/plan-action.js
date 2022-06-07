@@ -43,7 +43,7 @@ mysql.createConnection({
 module.exports = {
     name: 'plan-action',
     description: 'Expose un plan d\'action',
-    category: 'plan-action',
+    category: 'Responsables',
     roles:[process.env.MEMBERS_ROLE_ID],
     permissions: ['SEND_MESSAGES'],
     ownerOnly: false,

@@ -43,7 +43,7 @@ mysql.createConnection({
 module.exports = {
     name: 'new-task',
     description: 'Crée une nouvelle tâche pour un membre sélectionné.',
-    category: 'plan-action',
+    category: 'Responsables',
     roles:[process.env.RESPONSABLES_ROLE_ID],
     permissions: ['SEND_MESSAGES'],
     ownerOnly: false,

@@ -28,7 +28,7 @@ mysql.createConnection({
 module.exports = {
     name: 'new-project',
     description: 'Crée un nouveau projet dans le plan d\'action.',
-    category: 'plan-action',
+    category: 'Responsables',
     roles:[process.env.RESPONSABLES_ROLE_ID],
     permissions: ['SEND_MESSAGES'],
     ownerOnly: false,

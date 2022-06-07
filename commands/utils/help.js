@@ -55,13 +55,13 @@ module.exports = {
             .setColor('#ff0004')
             .addField('Liste des commandes', `Une liste de toutes les catégories disponibles et leurs commandes.\n Pour plus d'information sur une commande, tapez \`/help <commande>\``);
 
-            for (const category of commandCategoryFolder) {
-                // if (category == 'events' && (member_roles.includes('Événement dégustation') || member_roles.includes('Levée de fonds'))) {
-                //     category_verificator = true;
-                // }
-                // else {
-                //     category_verificator = member_roles.includes(category)
-                // }
+            for (const category of Object.keys(commandFolder)) {
+                if (category == 'events' && (member_roles.includes('Événement dégustation') || member_roles.includes('Levée de fonds'))) {
+                    category_verificator = true;
+                }
+                else {
+                    category_verificator = member_roles.includes(category);
+                }
                 if (member_roles.includes(category)) {
                 noArgsEmbed.addField(
                     `► ${category.toUpperCase()}`,

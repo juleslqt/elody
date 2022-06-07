@@ -43,7 +43,7 @@ module.exports = {
             i+=1;
         }
 
-        console.log(member_roles);
+        console.log('Roles : ', member_roles);
         
         if (!cmdName) {
             const noArgsEmbed = new MessageEmbed()

@@ -18,41 +18,6 @@ module.exports = {
     examples: ['help', 'help ping', 'help poll'],
     run(client, message, args) {
 
-        if (!args.length) {
-            const noArgsEmbed = new MessageEmbed()
-            .setColor('#ff0004')
-            .addField('Liste des commandes', `Une liste de toutes les catégories disponibles et leurs commandes.\n Pour plus d'information sur une commande, tapez \`${prefix}help <commande>\``);
-
-            for (const category of commandFolder) {
-                noArgsEmbed.addField(
-                    `► ${category.toUpperCase()}`,
-                    `${client.commands.filter(cmd => cmd.category == category.toLowerCase()).map(cmd => cmd.name).join(', ')}`
-                )
-            };
-
-            return message.reply({ embeds: [noArgsEmbed] });
-        }
-
-        const cmd = client.commands.get(args[0]);
-        if (!cmd) return message.reply('cette commande n\'existe pas.');
-
-        return message.channel.send(`
-\`\`\`makefile
-[Help: Commande -> ${cmd.name}] ${cmd.ownerOnly ? '/!\\ Seuls les administrateurs du serveur y ont accès /!\\' : ''}
-
-${cmd.description ? cmd.description : contextDescription[`${cmd.name}`] }
-
-Permissions: ${cmd.permissions.join(', ')}
-Utilisation: ${prefix}${cmd.usage}
-Exemples: ${prefix}${cmd.examples.join(` | ${prefix}`)}
-
----
-
-${prefix} = prefix utilisé pour le bot
-
-\`\`\`
-`);
-
     },
     options: [
         {
@@ -65,6 +30,8 @@ ${prefix} = prefix utilisé pour le bot
     async runInteraction(client,interaction) {
 
         const cmdName = interaction.options.getString('commande');
+
+        console.log(cmd.roles);
         
         if (!cmdName) {
             const noArgsEmbed = new MessageEmbed()

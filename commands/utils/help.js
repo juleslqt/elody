@@ -1,6 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const { readdirSync } = require('fs');
-const commandFolder = readdirSync('./commands');
+const commandCategoryFolder = readdirSync('./commands');
+const commandFolder = readdirSync('./commands/plan-action');
 const prefix = '!';
 
 const contextDescription = {
@@ -44,6 +45,7 @@ module.exports = {
         }
 
         console.log('Roles : ', member_roles);
+        console.log(commandCategoryFolder);
         console.log(commandFolder);
         
         if (!cmdName) {
@@ -51,7 +53,7 @@ module.exports = {
             .setColor('#ff0004')
             .addField('Liste des commandes', `Une liste de toutes les catégories disponibles et leurs commandes.\n Pour plus d'information sur une commande, tapez \`/help <commande>\``);
 
-            for (const category of commandFolder) {
+            for (const category of commandCategoryFolder) {
                 // if (category == 'events' && (member_roles.includes('Événement dégustation') || member_roles.includes('Levée de fonds'))) {
                 //     category_verificator = true;
                 // }

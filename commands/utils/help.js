@@ -1,8 +1,10 @@
 const { MessageEmbed } = require('discord.js');
 const { readdirSync } = require('fs');
 const commandCategoryFolder = readdirSync('./commands');
-const commandFolder = readdirSync('./commands/plan-action');
-const prefix = '!';
+let commandFolder = [];
+commandCategoryFolder.forEach(category => {
+    commandFolder[category] = readdirSync('./commands/' + category);
+});
 
 const contextDescription = {
     Informations: 'Affiche les informations de l\'utilisateur'

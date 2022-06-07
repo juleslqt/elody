@@ -56,11 +56,11 @@ module.exports = {
             .addField('Liste des commandes', `Une liste de toutes les catégories disponibles et leurs commandes.\n Pour plus d'information sur une commande, tapez \`/help <commande>\``);
 
             for (const category of Object.keys(commandFolder)) {
-                if (category == 'events' && (member_roles.includes('Événement dégustation') || member_roles.includes('Levée de fonds'))) {
+                if (category == 'events' && (Object.keys(member_roles).includes('Événement dégustation') || member_roles.includes('Levée de fonds'))) {
                     category_verificator = true;
                 }
                 else {
-                    category_verificator = member_roles.includes(category);
+                    category_verificator = Object.keys(member_roles).includes(category);
                 }
                 if (member_roles.includes(category)) {
                 noArgsEmbed.addField(

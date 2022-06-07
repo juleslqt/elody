@@ -44,6 +44,7 @@ module.exports = {
         }
 
         console.log('Roles : ', member_roles);
+        categories = ['admin'];
         
         if (!cmdName) {
             const noArgsEmbed = new MessageEmbed()
@@ -51,10 +52,12 @@ module.exports = {
             .addField('Liste des commandes', `Une liste de toutes les catégories disponibles et leurs commandes.\n Pour plus d'information sur une commande, tapez \`/help <commande>\``);
 
             for (const category of commandFolder) {
+                if (categories.includes(category)) {
                 noArgsEmbed.addField(
                     `► ${category.toUpperCase()}`,
                     `${client.commands.filter(cmd => cmd.category == category.toLowerCase()).map(cmd => cmd.name).join(', ')}`
                 )
+                }
             };
 
             return interaction.reply({ embeds: [noArgsEmbed], ephemeral: true });

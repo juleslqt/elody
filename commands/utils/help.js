@@ -46,8 +46,7 @@ module.exports = {
             i+=1;
         }
 
-        console.log('Roles : ', member_roles);
-        console.log(commandCategoryFolder);
+        console.log('Roles du membre : ', member_roles);
         console.log(commandFolder);
         
         if (!cmdName) {
@@ -62,7 +61,8 @@ module.exports = {
                 else {
                     category_verificator = Object.keys(member_roles).includes(category);
                 }
-                if (member_roles.includes(category)) {
+
+                if (category_verificator) {
                 noArgsEmbed.addField(
                     `► ${category.toUpperCase()}`,
                     `${client.commands.filter(cmd => cmd.category == category.toLowerCase()).map(cmd => cmd.name).join(', ')}`

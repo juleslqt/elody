@@ -6,7 +6,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'realized',
     description: 'Change le statut d\'une tâche qui vous est assignée en \'Accomplie\'',
-    category: 'Responsables',
+    category: 'responsables',
     roles:[process.env.MEMBERS_ROLE_ID],
     permissions: ['SEND_MESSAGES'],
     ownerOnly: false,

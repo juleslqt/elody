@@ -30,8 +30,6 @@ module.exports = {
     async runInteraction(client,interaction) {
 
         const cmdName = interaction.options.getString('commande');
-
-        console.log(cmd.roles);
         
         if (!cmdName) {
             const noArgsEmbed = new MessageEmbed()
@@ -49,6 +47,7 @@ module.exports = {
         }
 
         const cmd = client.commands.get(cmdName);
+        console.log(cmd.roles);
         if (!cmd) return interaction.reply({content: 'Cette commande n\'existe pas.', ephemeral: true});
 
         return interaction.reply({content: `

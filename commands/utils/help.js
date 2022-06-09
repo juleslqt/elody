@@ -47,7 +47,8 @@ module.exports = {
         }
 
         console.log('Roles du membre : ', member_roles);
-        console.log(commandFolder);
+        // console.log(commandFolder);
+        console.log('Commandes : ', client.commands.filter(cmd => cmd.category == category.toLowerCase()));
         
         if (!cmdName) {
             const noArgsEmbed = new MessageEmbed()

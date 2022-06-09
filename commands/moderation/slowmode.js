@@ -5,7 +5,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'slowmode',
     description: 'Imposer un temps en secondes entre l\'envoie de chaque message',
-    category: 'moderation',
+    category: 'responsables',
     roles:[process.env.RESPONSABLES_ROLE_ID],
     permissions: ['MANAGE_MESSAGES'],
     ownerOnly: false,

@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'clear',
     description: 'Supprimer un nombre défini de messages sur un salon en ciblant optionnellement un utilisateur.',
-    category: 'moderation',
+    category: 'responsables',
     roles:[process.env.RESPONSABLES_ROLE_ID],
     permissions: ['MANAGE_MESSAGES'],
     ownerOnly: false,

@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'lock',
     description: 'Vérouiller un salon.',
-    category: 'moderation',
+    category: 'responsables',
     roles:[process.env.RESPONSABLES_ROLE_ID],
     permissions: ['MANAGE_CHANNELS'],
     ownerOnly: false,

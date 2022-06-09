@@ -1,7 +1,7 @@
 module.exports = {
     name: 'unmute',
     description: 'Permet à un utilisateur qui a été rendu muet de parler à nouveau.',
-    category: 'moderation',
+    category: 'responsables',
     roles:[process.env.RESPONSABLES_ROLE_ID],
     permissions: ['MODERATE_MEMBERS'],
     ownerOnly: false,

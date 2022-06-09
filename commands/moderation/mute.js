@@ -5,7 +5,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'mute',
     description: 'Rend un utilisateur muet pendant un certain temps.',
-    category: 'moderation',
+    category: 'responsables',
     roles:[process.env.RESPONSABLES_ROLE_ID],
     permissions: ['MODERATE_MEMBERS'],
     ownerOnly: false,

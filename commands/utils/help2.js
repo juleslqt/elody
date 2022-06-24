@@ -11,7 +11,7 @@ const contextDescription = {
 }
 
 module.exports = {
-    name: 'help',
+    name: 'help2',
     description: 'Informations sur le fonctionnement du serveur Discord et d\'Elody.',
     category: 'utils',
     roles:[process.env.MEMBERS_ROLE_ID],

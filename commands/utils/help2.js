@@ -43,6 +43,8 @@ module.exports = {
             // {name: 'Membres assignés', value: members, inline: false}
         )
 
+        interaction.reply({ embed: [helpEmbed], ephemeral: true });
+
     }
         
 }
